@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace IUWindowsForms
 {
-    public partial class frmListadoEstudiante : Form
+    public partial class frmAgregarEstudiante : Form
     {
-        public frmListadoEstudiante()
+        public frmAgregarEstudiante()
         {
             InitializeComponent();
-        }
-
-        private void btnMostrar_Click(object sender, EventArgs e)
-        {
-            this.DataGridViewEstuddiante.DataSource = CapaDatos.PersonaDAO.getAll();
-
         }
     }
 }

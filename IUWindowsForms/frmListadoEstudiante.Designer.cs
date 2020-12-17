@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnMostrar = new System.Windows.Forms.Button();
+            this.DataGridViewEstuddiante = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewEstuddiante)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -51,16 +53,27 @@
             this.btnMostrar.TabIndex = 1;
             this.btnMostrar.Text = "Mostrar";
             this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            // 
+            // DataGridViewEstuddiante
+            // 
+            this.DataGridViewEstuddiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewEstuddiante.Location = new System.Drawing.Point(42, 85);
+            this.DataGridViewEstuddiante.Name = "DataGridViewEstuddiante";
+            this.DataGridViewEstuddiante.Size = new System.Drawing.Size(729, 150);
+            this.DataGridViewEstuddiante.TabIndex = 2;
             // 
             // frmListadoEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DataGridViewEstuddiante);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.label1);
             this.Name = "frmListadoEstudiante";
             this.Text = "Listado de Estudiante";
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewEstuddiante)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -70,5 +83,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.DataGridView DataGridViewEstuddiante;
     }
 }
