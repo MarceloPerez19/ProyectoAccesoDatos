@@ -6,6 +6,8 @@ namespace CapaDatos
 {
     public class Persona
     {
+        //get 
+        //set
         public String Cedula { get; set; }
         public String Apellidos { get; set; }
         public String Nombres { get; set; }

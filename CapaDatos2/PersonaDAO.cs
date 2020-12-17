@@ -27,14 +27,22 @@ namespace CapaDatos
 
             //definir los parametros
             comando.CommandType = CommandType.Text;
-            comando.Parameters.AddWithValue(" @cedula", persona.Cedula);
-            comando.Parameters.AddWithValue(" @apellidos", persona.Apellidos);
-            comando.Parameters.AddWithValue(" @nombres", persona.Nombres);
-            comando.Parameters.AddWithValue(" @sexo", persona.Sexo);
-            comando.Parameters.AddWithValue(" @fechaNacimiento", persona.fechaNacimiento);
-            comando.Parameters.AddWithValue(" @correo", persona.Correo);
-            comando.Parameters.AddWithValue(" @estatura", persona.estatura);
-            comando.Parameters.AddWithValue(" @peso", persona.Peso);
+            comando.Parameters.AddWithValue("@cedula", persona.Cedula);
+            comando.Parameters.AddWithValue("@apellidos", persona.Apellidos);
+            comando.Parameters.AddWithValue("@nombres", persona.Nombres);
+            comando.Parameters.AddWithValue("@sexo", persona.Sexo);
+            comando.Parameters.AddWithValue("@fechaNacimiento", persona.fechaNacimiento);
+            comando.Parameters.AddWithValue("@correo", persona.Correo);
+            comando.Parameters.AddWithValue("@estatura", persona.estatura);
+            comando.Parameters.AddWithValue("@peso", persona.Peso);
+
+            //3. abrir la conexcion y ejecutar el comando
+            conexion.Open();
+            int x = comando.ExecuteNonQuery();
+            //4. cerrar  la conexion
+            conexion.Close();
+
+            return x;
 
         }
         public static DataTable getAll()
