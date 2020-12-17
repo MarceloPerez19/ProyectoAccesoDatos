@@ -8,6 +8,7 @@ namespace CapaDatos
 {
     class PersonaDAO
     {
+        
         public static DataTable getAll()
         {
             //1. definir y configurar la conexion con el motor de BDD
@@ -29,7 +30,10 @@ namespace CapaDatos
             SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
 
             //3. recuperamos los datos 
-            DataTable dt=new DataTable
+
+            DataTable dt = new DataTable();
+            ad.Fill(dt); //desde el adaptador paso los datos al datatable
+            return dt;
         }
     }
 }
