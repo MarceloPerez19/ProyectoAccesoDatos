@@ -19,6 +19,48 @@ namespace IUWindowsForms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if(this.txtCedula.Text.Length==0)
+            {
+                MessageBox.Show("Ingresa la cedula");
+                this.txtCedula.Focus();
+                return;
+            }
+            if (this.txtApellido.Text.Length == 0)
+            {
+                MessageBox.Show("Ingresa el apellido");
+                this.txtApellido.Focus();
+                return;
+            }
+            if (this.txtNombre.Text.Length == 0)
+            {
+                MessageBox.Show("Ingresa el nombre");
+                this.txtNombre.Focus();
+                return;
+            }
+            if (this.cmbSexo.Text.Length == 0)
+            {
+                MessageBox.Show("Ingresa el sexo");
+                this.cmbSexo.Focus();
+                return;
+            }
+            if (this.txtCorreo.Text.Length == 0)
+            {
+                MessageBox.Show("Ingresa el correo");
+                this.txtCorreo.Focus();
+                return;
+            }
+            if (this.txtEstatura.Text.Length == 0)
+            {
+                MessageBox.Show("Ingresa la estatura");
+                this.txtEstatura.Focus();
+                return;
+            }
+            if (this.txtPeso.Text.Length == 0)
+            {
+                MessageBox.Show("Ingresa el peso");
+                this.txtPeso.Focus();
+                return;
+            }
             //faltar validaciones
             CapaDatos.Persona persona = new CapaDatos.Persona();
             persona.Cedula = this.txtCedula.Text;
@@ -37,6 +79,11 @@ namespace IUWindowsForms
                 MessageBox.Show("No se pudo agregar el registro....");
 
 
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
