@@ -57,9 +57,16 @@
             // 
             // DataGridViewEstuddiante
             // 
+            this.DataGridViewEstuddiante.AllowUserToAddRows = false;
+            this.DataGridViewEstuddiante.AllowUserToDeleteRows = false;
+            this.DataGridViewEstuddiante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DataGridViewEstuddiante.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGridViewEstuddiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewEstuddiante.Location = new System.Drawing.Point(42, 85);
             this.DataGridViewEstuddiante.Name = "DataGridViewEstuddiante";
+            this.DataGridViewEstuddiante.ReadOnly = true;
             this.DataGridViewEstuddiante.Size = new System.Drawing.Size(729, 150);
             this.DataGridViewEstuddiante.TabIndex = 2;
             // 

@@ -8,11 +8,12 @@ namespace CapaDatos
 {
     public class PersonaDAO
     {
+        private static String cadenaConexcion = @"Server=USER-PC\SQLEXPRESS; database = Estudiantes; integrated security = true";
         public static int crear(Persona persona)
         {
             //agregar estudiantes en la bdd
             //1. definir y configurar la conexion con el motor de BDD
-            String cadenaConexcion = @"Server=USER-PC\SQLEXPRESS; database = Estudiantes; integrated security = true";
+            //String cadenaConexcion = @"Server=USER-PC\SQLEXPRESS; database = Estudiantes; integrated security = true";
 
 
             //definir un objeto tipo Conexion para conectarnos con el servidor
@@ -52,7 +53,7 @@ namespace CapaDatos
             //String cadenaConexcion = "Server="; database = Estudiantes; user id=sa; pwd=isa" ;
 
             //cadena de conexion utilizando usuario de windows
-            String cadenaConexcion = @"Server=USER-PC\SQLEXPRESS; database = Estudiantes; integrated security = true";
+            //String cadenaConexcion = @"Server=USER-PC\SQLEXPRESS; database = Estudiantes; integrated security = true";
 
             //definir un objeto tipo Conexion para conectarnos con el servidor
             SqlConnection conexion = new SqlConnection(cadenaConexcion);
@@ -60,14 +61,14 @@ namespace CapaDatos
             //2. definir la operacion a realizar en el servidor
             //operacion : obtener todos los registros
             //sql(lenguaje estructurado de consultas)
-            string sql = "select cedula, apellidos, nombres, sexo, fechaNacimiento, correo, estatura, peso " + "from Personas";
+            string sql = "select cedula, apellidos, nombres, upper(apellidos +' '+ nombres) as estudiante, case when sexo='M' then 'Masculino' else 'Femenino' end as sexo, fechaNacimiento, correo, estatura, peso " + "from Personas order by apellidos, nombres";
 
             //definir adaptador de datos: es un pueste que permite pasar los datos de la base de datos hacia el datatable
             SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
 
             //3. recuperamos los datos 
 
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable();    
             ad.Fill(dt); //desde el adaptador paso los datos al datatable
             return dt;
         }
