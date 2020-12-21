@@ -87,7 +87,7 @@ namespace CapaDatos
             //2. definir la operacion a realizar en el servidor
             //operacion : obtener todos los registros
             //sql(lenguaje estructurado de consultas)
-            string sql = "select cedula, apellidos, nombres, sexo, fechaNacimiento, correo, estatura, peso " + "from Personas" + "where cedula=@cedula";
+            string sql = "select cedula, apellidos, nombres, sexo, fechaNacimiento, correo, estatura, peso " + "from Personas " + "where cedula=@cedula";
 
             //definir adaptador de datos: es un pueste que permite pasar los datos de la base de datos hacia el datatable
             SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
