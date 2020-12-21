@@ -82,7 +82,7 @@ namespace IUWindowsForms
                 this.txtPeso.Focus();
                 return;
             }
-            //faltar validaciones
+            /*//faltar validaciones
             CapaDatos.Persona persona = new CapaDatos.Persona();
             persona.Cedula = this.txtCedula.Text;
             persona.Apellidos = this.txtApellido.Text;
@@ -97,7 +97,7 @@ namespace IUWindowsForms
             if (x > 0)
                 MessageBox.Show("Persona agregado con exito");
             else
-                MessageBox.Show("No se pudo agregar el registro....");
+                MessageBox.Show("No se pudo agregar el registro....");*/
 
 
         }

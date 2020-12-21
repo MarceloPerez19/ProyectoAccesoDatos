@@ -50,6 +50,11 @@
             // 
             // cmbCedula
             // 
+            this.cmbCedula.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCedula.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbCedula.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCedula.FormattingEnabled = true;
             this.cmbCedula.Location = new System.Drawing.Point(289, 35);
             this.cmbCedula.Name = "cmbCedula";
