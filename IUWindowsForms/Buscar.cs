@@ -28,5 +28,19 @@ namespace IUWindowsForms
             this.cmbCedula.DisplayMember = "estudiante";
             this.cmbCedula.ValueMember = "cedula";
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string cedula = this.cmbCedula.SelectedValue.ToString();
+
+            CapaDatos.Persona P = new CapaDatos.Persona();
+            P = CapaDatos.PersonaDAO.getPersona(cedula);
+
+            //cargar datos en los cuadros de texto
+            this.txtCedula.Text = P.Cedula;
+            this.txtApellidos.Text = P.Apellidos;
+            this.txtNombres.Text = P.Nombres;
+
+        }
     }
 }

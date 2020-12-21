@@ -68,9 +68,52 @@ namespace CapaDatos
 
             //3. recuperamos los datos 
 
-            DataTable dt = new DataTable();    
+            DataTable dt = new DataTable();
             ad.Fill(dt); //desde el adaptador paso los datos al datatable
             return dt;
+        }
+        public static Persona getPersona(String cedula)
+        {
+            //1. definir y configurar la conexion con el motor de BDD
+            //cadena de conexion que utiliza la autentificacion que proporciona sql se
+            //String cadenaConexcion = "Server="; database = Estudiantes; user id=sa; pwd=isa" ;
+
+            //cadena de conexion utilizando usuario de windows
+            //String cadenaConexcion = @"Server=USER-PC\SQLEXPRESS; database = Estudiantes; integrated security = true";
+
+            //definir un objeto tipo Conexion para conectarnos con el servidor
+            SqlConnection conexion = new SqlConnection(cadenaConexcion);
+
+            //2. definir la operacion a realizar en el servidor
+            //operacion : obtener todos los registros
+            //sql(lenguaje estructurado de consultas)
+            string sql = "select cedula, apellidos, nombres, sexo, fechaNacimiento, correo, estatura, peso " + "from Personas" + "where cedula=@cedula";
+
+            //definir adaptador de datos: es un pueste que permite pasar los datos de la base de datos hacia el datatable
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
+            ad.SelectCommand.Parameters.AddWithValue("@cedula", cedula);
+
+            //3. recuperamos los datos 
+
+            DataTable dt = new DataTable();    
+            ad.Fill(dt); //desde el adaptador paso los datos al datatable
+
+            Persona P = new Persona();
+            //recorrer el datatable
+            foreach(DataRow fila in dt.Rows)
+            {
+                P.Cedula = fila["cedula"].ToString();
+                P.Apellidos = fila["apellidos"].ToString();
+                P.Nombres = fila["nombres"].ToString();
+                P.Sexo = fila["sexo"].ToString();
+                P.Correo = fila["correo"].ToString();
+                P.estatura = int.Parse(fila["estatura"].ToString());
+                P.Peso = decimal.Parse(fila["peso"].ToString());
+                P.fechaNacimiento = Convert.ToDateTime(fila["fechaNacimiento"].ToString());
+                break;//abandonar el for
+            }
+            return P;
+            
         }
     }
 }
