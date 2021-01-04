@@ -40,6 +40,12 @@ namespace IUWindowsForms
             this.txtCedula.Text = P.Cedula;
             this.txtApellidos.Text = P.Apellidos;
             this.txtNombres.Text = P.Nombres;
+            this.cmbSexo.Text = P.Sexo;
+            this.dtFechaNacimiento.Value = Convert.ToDateTime(P.fechaNacimiento);
+            this.txtEstatura.Text = P.estatura.ToString();
+            this.txtPeso.Text = P.Peso.ToString();
+            this.txtCorreo.Text = P.Correo;
+
 
         }
     }

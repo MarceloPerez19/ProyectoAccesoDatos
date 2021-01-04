@@ -46,6 +46,45 @@ namespace CapaDatos
             return x;
 
         }
+
+        public static int actualizar(Persona persona)
+        {
+            
+            SqlConnection conexion = new SqlConnection(cadenaConexcion);
+
+            // 2definiar operacion en la base de datos (insertar)
+            string sql = "insert into Personas(cedula, apellidos, nombres, sexo, fechaNacimiento, correo, estatura, peso) " +
+                "values(@cedula, @apellidos,  @nombres, @sexo, @fechaNacimiento, @correo, @estatura, @peso)";
+
+            //definir un objeto de la clase Command para ejecurtar la sentencia sql que hemos creado
+            SqlCommand comando = new SqlCommand(sql, conexion);
+
+            //definir los parametros
+            comando.CommandType = CommandType.Text;
+            comando.Parameters.AddWithValue("@cedula", persona.Cedula);
+            comando.Parameters.AddWithValue("@apellidos", persona.Apellidos);
+            comando.Parameters.AddWithValue("@nombres", persona.Nombres);
+            comando.Parameters.AddWithValue("@sexo", persona.Sexo);
+            comando.Parameters.AddWithValue("@fechaNacimiento", persona.fechaNacimiento);
+            comando.Parameters.AddWithValue("@correo", persona.Correo);
+            comando.Parameters.AddWithValue("@estatura", persona.estatura);
+            comando.Parameters.AddWithValue("@peso", persona.Peso);
+
+            //3. abrir la conexcion y ejecutar el comando
+            conexion.Open();
+            int x = comando.ExecuteNonQuery();
+            //4. cerrar  la conexion
+            conexion.Close();
+
+            return x;
+
+        }
+
+
+
+
+
+
         public static DataTable getAll()
         {
             //1. definir y configurar la conexion con el motor de BDD
