@@ -68,9 +68,44 @@ namespace IUWindowsForms
 
             int x=CapaDatos.PersonaDAO.actualizar(persona);
             if (x > 0)
+            {
+                this.cargarComboEstudiante(); //refresque el cuadro combinado de estudiantes
                 MessageBox.Show("Registro actualizado con exito");
+            }
             else
                 MessageBox.Show("No se pudo actualizar el registro");
+        }
+
+        private void btb_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Estas seguro que sedea eliminar este registro?","Confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(dr==DialogResult.No)
+            {
+                return; //abandonar
+            }
+            int x=CapaDatos.PersonaDAO.eliminar(this.txtCedula.Text);
+            if(x>0)
+            {
+                this.encerar();
+                this.cargarComboEstudiante();
+                MessageBox.Show("Registro eliminado con exito");
+            }
+            else
+            {
+                MessageBox.Show("No se puedo borrar el registro");
+            }
+
+        }
+
+        private void encerar()
+        {
+            this.txtCedula.Text = " ";
+            this.txtApellidos.Text = " ";
+            this.txtNombres.Text = " ";
+            this.txtCorreo.Text = " ";
+            this.txtNombres.Text = "0";
+            this.txtPeso.Text = "0";
+            this.cmbSexo.Text = "M";
         }
     }
 }

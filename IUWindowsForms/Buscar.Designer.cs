@@ -225,6 +225,7 @@
             this.btb.TabIndex = 19;
             this.btb.Text = "Eliminar";
             this.btb.UseVisualStyleBackColor = true;
+            this.btb.Click += new System.EventHandler(this.btb_Click);
             // 
             // groupBox1
             // 
