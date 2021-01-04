@@ -117,6 +117,7 @@
             this.txtCedula.Location = new System.Drawing.Point(151, 83);
             this.txtCedula.MaxLength = 10;
             this.txtCedula.Name = "txtCedula";
+            this.txtCedula.ReadOnly = true;
             this.txtCedula.Size = new System.Drawing.Size(161, 20);
             this.txtCedula.TabIndex = 6;
             // 
@@ -214,6 +215,7 @@
             this.btnActualizar.TabIndex = 18;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btb
             // 

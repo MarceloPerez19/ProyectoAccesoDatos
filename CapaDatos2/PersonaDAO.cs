@@ -52,9 +52,9 @@ namespace CapaDatos
             
             SqlConnection conexion = new SqlConnection(cadenaConexcion);
 
-            // 2definiar operacion en la base de datos (insertar)
-            string sql = "insert into Personas(cedula, apellidos, nombres, sexo, fechaNacimiento, correo, estatura, peso) " +
-                "values(@cedula, @apellidos,  @nombres, @sexo, @fechaNacimiento, @correo, @estatura, @peso)";
+            // 2definiar operacion en la base de datos (actualizar)
+            string sql = "update Personas set apellidos=@apellidos, nombres=@nombres, sexo=@sexo, fechaNacimiento=@fechaNacimiento, correo=@correo, estatura=@estatura, peso=@peso " +
+                "where cedula=@cedula ";
 
             //definir un objeto de la clase Command para ejecurtar la sentencia sql que hemos creado
             SqlCommand comando = new SqlCommand(sql, conexion);
@@ -72,7 +72,7 @@ namespace CapaDatos
 
             //3. abrir la conexcion y ejecutar el comando
             conexion.Open();
-            int x = comando.ExecuteNonQuery();
+            int x = comando.ExecuteNonQuery();//devuelve el total de filas afectadas
             //4. cerrar  la conexion
             conexion.Close();
 

@@ -48,5 +48,29 @@ namespace IUWindowsForms
 
 
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (this.txtCedula.Text.Length == 0)//si la cedula esta vacia
+            {
+                MessageBox.Show("No hay cedula seleccionada");
+                return; //abandonar
+            }
+            CapaDatos.Persona persona = new CapaDatos.Persona();
+            persona.Cedula = this.txtCedula.Text;
+            persona.Apellidos = this.txtApellidos.Text;
+            persona.Nombres = this.txtNombres.Text;
+            persona.Sexo = this.cmbSexo.Text;
+            persona.Correo = this.txtCorreo.Text;
+            persona.estatura = int.Parse(this.txtEstatura.Text);
+            persona.Peso = Decimal.Parse(this.txtPeso.Text);
+            persona.fechaNacimiento = dtFechaNacimiento.Value;
+
+            int x=CapaDatos.PersonaDAO.actualizar(persona);
+            if (x > 0)
+                MessageBox.Show("Registro actualizado con exito");
+            else
+                MessageBox.Show("No se pudo actualizar el registro");
+        }
     }
 }
