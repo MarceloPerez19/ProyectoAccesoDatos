@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmActualizar));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.txtEstatura = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -47,13 +46,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1Guardar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnCerrar);
-            this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.txtPeso);
             this.groupBox1.Controls.Add(this.txtEstatura);
             this.groupBox1.Controls.Add(this.txtCorreo);
@@ -70,33 +72,16 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(35, 12);
+            this.groupBox1.Location = new System.Drawing.Point(37, 58);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(695, 300);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese los datos del estudiante";
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Location = new System.Drawing.Point(520, 61);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 19;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(520, 32);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 17;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
             // txtPeso
             // 
+            this.txtPeso.ForeColor = System.Drawing.Color.Red;
             this.txtPeso.Location = new System.Drawing.Point(230, 274);
             this.txtPeso.MaxLength = 6;
             this.txtPeso.Name = "txtPeso";
@@ -105,6 +90,7 @@
             // 
             // txtEstatura
             // 
+            this.txtEstatura.ForeColor = System.Drawing.Color.Red;
             this.txtEstatura.Location = new System.Drawing.Point(230, 239);
             this.txtEstatura.MaxLength = 3;
             this.txtEstatura.Name = "txtEstatura";
@@ -113,6 +99,7 @@
             // 
             // txtCorreo
             // 
+            this.txtCorreo.ForeColor = System.Drawing.Color.Red;
             this.txtCorreo.Location = new System.Drawing.Point(230, 203);
             this.txtCorreo.MaxLength = 80;
             this.txtCorreo.Name = "txtCorreo";
@@ -121,6 +108,7 @@
             // 
             // tdFechaNacimiento
             // 
+            this.tdFechaNacimiento.CalendarTitleForeColor = System.Drawing.Color.Red;
             this.tdFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.tdFechaNacimiento.Location = new System.Drawing.Point(230, 168);
             this.tdFechaNacimiento.Name = "tdFechaNacimiento";
@@ -129,6 +117,7 @@
             // 
             // cmbSexo
             // 
+            this.cmbSexo.ForeColor = System.Drawing.Color.Red;
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Items.AddRange(new object[] {
             "F",
@@ -140,6 +129,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.ForeColor = System.Drawing.Color.Red;
             this.txtNombre.Location = new System.Drawing.Point(230, 102);
             this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
@@ -148,6 +138,7 @@
             // 
             // txtApellido
             // 
+            this.txtApellido.ForeColor = System.Drawing.Color.Red;
             this.txtApellido.Location = new System.Drawing.Point(230, 68);
             this.txtApellido.MaxLength = 30;
             this.txtApellido.Name = "txtApellido";
@@ -156,6 +147,7 @@
             // 
             // txtCedula
             // 
+            this.txtCedula.ForeColor = System.Drawing.Color.Red;
             this.txtCedula.Location = new System.Drawing.Point(230, 36);
             this.txtCedula.MaxLength = 10;
             this.txtCedula.Name = "txtCedula";
@@ -235,12 +227,51 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cedula";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1Guardar,
+            this.toolStripSeparator1,
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1Guardar
+            // 
+            this.toolStripButton1Guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1Guardar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1Guardar.Image")));
+            this.toolStripButton1Guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1Guardar.Name = "toolStripButton1Guardar";
+            this.toolStripButton1Guardar.Size = new System.Drawing.Size(53, 22);
+            this.toolStripButton1Guardar.Text = "Guardar";
+            this.toolStripButton1Guardar.Click += new System.EventHandler(this.toolStripButton1Guardar_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(33, 22);
+            this.toolStripButton2.Text = "Salir";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // frmActualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -249,15 +280,16 @@
             this.Load += new System.EventHandler(this.frmActualizar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.TextBox txtEstatura;
         private System.Windows.Forms.TextBox txtCorreo;
@@ -274,5 +306,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1Guardar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

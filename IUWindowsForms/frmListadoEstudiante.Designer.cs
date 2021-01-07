@@ -65,6 +65,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DataGridViewEstuddiante.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridViewEstuddiante.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.DataGridViewEstuddiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewEstuddiante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.linkActualizar,
@@ -105,6 +106,7 @@
             this.Controls.Add(this.DataGridViewEstuddiante);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Name = "frmListadoEstudiante";
             this.Text = "Listado de Estudiante";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewEstuddiante)).EndInit();
