@@ -107,5 +107,10 @@ namespace IUWindowsForms
             this.txtPeso.Text = "0";
             this.cmbSexo.Text = "M";
         }
+
+        private void cmbCedula_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

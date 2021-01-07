@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.DataGridViewEstuddiante = new System.Windows.Forms.DataGridView();
+            this.linkActualizar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.linkEliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewEstuddiante)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +66,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DataGridViewEstuddiante.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGridViewEstuddiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewEstuddiante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.linkActualizar,
+            this.linkEliminar});
             this.DataGridViewEstuddiante.Location = new System.Drawing.Point(42, 85);
             this.DataGridViewEstuddiante.Name = "DataGridViewEstuddiante";
             this.DataGridViewEstuddiante.ReadOnly = true;
             this.DataGridViewEstuddiante.Size = new System.Drawing.Size(729, 150);
             this.DataGridViewEstuddiante.TabIndex = 2;
+            this.DataGridViewEstuddiante.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewEstuddiante_CellContentClick);
+            // 
+            // linkActualizar
+            // 
+            this.linkActualizar.ActiveLinkColor = System.Drawing.SystemColors.Highlight;
+            this.linkActualizar.HeaderText = "Accion";
+            this.linkActualizar.LinkColor = System.Drawing.Color.Black;
+            this.linkActualizar.Name = "linkActualizar";
+            this.linkActualizar.ReadOnly = true;
+            this.linkActualizar.Text = "Actualizar";
+            this.linkActualizar.UseColumnTextForLinkValue = true;
+            this.linkActualizar.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            // 
+            // linkEliminar
+            // 
+            this.linkEliminar.ActiveLinkColor = System.Drawing.Color.Black;
+            this.linkEliminar.HeaderText = "Accion";
+            this.linkEliminar.LinkColor = System.Drawing.Color.Red;
+            this.linkEliminar.Name = "linkEliminar";
+            this.linkEliminar.ReadOnly = true;
+            this.linkEliminar.Text = "Eliminar";
+            this.linkEliminar.UseColumnTextForLinkValue = true;
             // 
             // frmListadoEstudiante
             // 
@@ -91,5 +118,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.DataGridView DataGridViewEstuddiante;
+        private System.Windows.Forms.DataGridViewLinkColumn linkActualizar;
+        private System.Windows.Forms.DataGridViewLinkColumn linkEliminar;
     }
 }

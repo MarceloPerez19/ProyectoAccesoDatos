@@ -74,6 +74,7 @@
             this.cmbCedula.Name = "cmbCedula";
             this.cmbCedula.Size = new System.Drawing.Size(372, 21);
             this.cmbCedula.TabIndex = 1;
+            this.cmbCedula.SelectedIndexChanged += new System.EventHandler(this.cmbCedula_SelectedIndexChanged);
             // 
             // btnBuscar
             // 
