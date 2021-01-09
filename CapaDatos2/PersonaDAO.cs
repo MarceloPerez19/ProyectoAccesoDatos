@@ -8,7 +8,7 @@ namespace CapaDatos
 {
     public class PersonaDAO
     {
-        private static String cadenaConexcion = @"Server=USER-PC\SQLEXPRESS; database = Estudiantes; integrated security = true";
+        private static String cadenaConexcion = @"Server=DESKTOP-P2GIT4H; database = Estudiantes; integrated security = true";
         public static int crear(Persona persona)
         {
             //agregar estudiantes en la bdd
