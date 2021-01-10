@@ -88,6 +88,7 @@ namespace IUWindowsForms.informes
             this.Controls.Add(this.label1);
             this.Name = "frmEstudianteSeleccionado";
             this.Text = "Informe por estudiante";
+            this.Load += new System.EventHandler(this.frmEstudianteSeleccionado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

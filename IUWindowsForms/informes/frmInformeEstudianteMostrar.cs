@@ -10,22 +10,27 @@ using System.Windows.Forms;
 
 namespace IUWindowsForms.informes
 {
-    public partial class frmInformeEstudiante : Form
+    public partial class frmInformeEstudianteMostrar : Form
     {
-        public frmInformeEstudiante()
+        private string mCedula;
+        public frmInformeEstudianteMostrar(String cedula)
         {
             InitializeComponent();
+            mCedula = cedula;
         }
 
-        private void frmInformeEstudiante_Load(object sender, EventArgs e)
+        private void frmInformeEstudianteMostrar_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dsEstudiante.Personas' Puede moverla o quitarla según sea necesario.
-            this.personasTableAdapter.Fill(this.dsEstudiante.Personas);
-
+            this.personas1TableAdapter.FillxCedula(this.dsEstudiante.Personas1, mCedula);
             this.reportViewer1.RefreshReport();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportViewer1_Load_1(object sender, EventArgs e)
         {
 
         }

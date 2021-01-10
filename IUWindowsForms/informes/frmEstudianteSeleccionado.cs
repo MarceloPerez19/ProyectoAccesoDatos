@@ -24,8 +24,13 @@ namespace IUWindowsForms.informes
 
         private void btnVerInforme_Click(object sender, EventArgs e)
         {
-            DataTable dt = CapaDatos.PersonaDAO.getAll();
-            this.cmbCedula.DataSource=dt; 
+            informes.frmInformeEstudianteMostrar frm1 = new frmInformeEstudianteMostrar(this.cmbCedula.SelectedValue.ToString());
+            frm1.Show();
+        }
+
+        private void frmEstudianteSeleccionado_Load(object sender, EventArgs e)
+        {
+            this.cmbCedula.DataSource = CapaDatos.PersonaDAO.getAll();
             this.cmbCedula.DisplayMember = "estudiante";
             this.cmbCedula.ValueMember = "cedula";
         }
