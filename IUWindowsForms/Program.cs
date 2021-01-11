@@ -16,7 +16,7 @@ namespace IUWindowsForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new informes.frmEstudianteSeleccionado()); 
+            Application.Run(new frmListadoEstudiante()); 
         }
     }
 }

@@ -49,6 +49,7 @@ namespace IUWindowsForms
 
         
 
+
         private void toolStripButton1Guardar_Click(object sender, EventArgs e)
         {
             if(this.mCedula.Length>0)
@@ -64,11 +65,16 @@ namespace IUWindowsForms
                 persona.fechaNacimiento = tdFechaNacimiento.Value;
                 
                 int x=CapaDatos.PersonaDAO.actualizar(persona);
+               
                 if (x > 0)
+                {
                     MessageBox.Show("Registro actualizado");
+                }
                 else
                     MessageBox.Show("No se actualizo el registro");
             }
+
+
         }
     }
 }

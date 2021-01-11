@@ -67,6 +67,7 @@ namespace IUWindowsForms
                 frmActualizar frm1 = new frmActualizar(cedula);
                 frm1.ShowDialog();
             }
+            this.cargarGrid();
 
 
 
